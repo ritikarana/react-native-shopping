@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ActivityIndicator, StyleSheet, ScrollView, View, Text, TextInput, FlatList, Image, TouchableOpacity, Button, RefreshControl } from 'react-native';
+import { useTheme } from '@react-navigation/native';
+
 
 const ProductList = ({ navigation }) => {
     const [searchProduct, setSearchProduct] = useState('');
     const [isLoading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [refreshing, setRefreshing] = useState(false);
+    const { colors } = useTheme();
+
 
     const onRefresh = useCallback(() => {
         setRefreshing(true);
@@ -13,6 +17,7 @@ const ProductList = ({ navigation }) => {
             setRefreshing(false);
         }, 2000);
     }, []);
+
 
     const getProducts = async () => {
         try {
@@ -43,7 +48,7 @@ const ProductList = ({ navigation }) => {
                 <Text style={styles.title}>{item.title}</Text>
             </View>
             <View style={styles.cardFooter}>
-                <Button title="View Details" onPress={() => navigation.navigate('ProductInfo', { item })} />
+                <Button color={colors.color} title="View Details" onPress={() => navigation.navigate('ProductInfo', { item })} />
             </View>
         </TouchableOpacity>
     );

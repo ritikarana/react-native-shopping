@@ -11,7 +11,7 @@ const ShopTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: 'rgb(228 160 160)',
+    primary: '#1456a7',
   },
 };
 
