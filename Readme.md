@@ -27,7 +27,17 @@ $ git clone https://github.com/ritikarana/react-native-shopping.git
 
 $ cd react-native-shopping/
 
-$ npm install
+$ npm install or yarn 
+```
+
+```
+To run on web 
+
+$ yarn web
+
+To run on ios and Android
+
+$ yarn start
 ```
 
 Runs your app in development mode.
